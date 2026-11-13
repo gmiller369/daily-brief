@@ -9,6 +9,9 @@
  *       Validate a section, encrypt it, write data/days/<date>/<section>.json.
  *       --in - reads JSON from stdin. --date defaults to today in America/New_York.
  *
+ *   BRIEF_PASSPHRASE=... node tools/brief.mjs publish-dir --dir /path/to/folder [--date YYYY-MM-DD]
+ *       Publish every <section>.json in a folder at once (encrypted).
+ *
  *   BRIEF_PASSPHRASE=... node tools/brief.mjs read --section school [--date YYYY-MM-DD]
  *       Decrypt and print a published section (to check what's there).
  *
@@ -134,6 +137,28 @@ async function main() {
     const file = path.join(dir, section + '.json');
     fs.writeFileSync(file, JSON.stringify(out, null, a.plain ? 2 : 0) + '\n');
     console.log('wrote ' + path.relative(root, file) + (a.plain ? ' (plain, demo)' : ' (encrypted)'));
+    return;
+  }
+
+  if (cmd === 'publish-dir') {
+    // Publish every <section>.json found in a folder, e.g. one written by the editor agent.
+    if (!a.dir) die('usage: publish-dir --dir <folder> [--date YYYY-MM-DD]');
+    const files = fs.readdirSync(a.dir).filter((f) => f.endsWith('.json') && SECTION_IDS.includes(f.slice(0, -5)));
+    if (!files.length) die('no section files (' + SECTION_IDS.join(', ') + ') in ' + a.dir);
+    const k = await key();
+    let bad = 0;
+    for (const f of files) {
+      const section = f.slice(0, -5);
+      const data = readInput(path.join(a.dir, f));
+      const errs = validate(section, data);
+      if (errs.length) { bad++; console.error(section + ':'); errs.forEach((e) => console.error('  ' + e)); continue; }
+      if (!data.updated) data.updated = new Date().toISOString();
+      const dir = path.join(root, 'data', 'days', date);
+      fs.mkdirSync(dir, { recursive: true });
+      fs.writeFileSync(path.join(dir, section + '.json'), JSON.stringify(await BriefCrypto.encryptJSON(k, data)) + '\n');
+      console.log('wrote data/days/' + date + '/' + section + '.json (encrypted)');
+    }
+    if (bad) process.exit(1);
     return;
   }
 
