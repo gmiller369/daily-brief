@@ -30,13 +30,21 @@
 
   const LOOK_COLORS = { clean: '#1f5fe0', glass: '#1f5fe0', midnight: '#0a1430', sky: '#cfe0ff', newspaper: '#f4f0e6' };
   function applyLook(look) {
-    if (!LOOK_COLORS[look]) look = 'clean';
+    if (!LOOK_COLORS[look]) look = 'glass';
     document.documentElement.dataset.look = look;
     const m = document.querySelector('meta[name="theme-color"]');
     if (m) m.setAttribute('content', LOOK_COLORS[look]);
     return look;
   }
-  applyLook(new URLSearchParams(location.search).get('look') || store.get('look') || 'clean');
+  const GLOWS = ['blue', 'ocean', 'sunset', 'aurora', 'neon', 'ice'];
+  function applyGlow(g) {
+    if (!GLOWS.includes(g)) g = 'blue';
+    document.documentElement.dataset.glow = g;
+    return g;
+  }
+  const qs = new URLSearchParams(location.search);
+  applyLook(qs.get('look') || store.get('look') || 'glass');
+  applyGlow(qs.get('glow') || store.get('glow') || 'blue');
 
   const state = {
     date: todayET(),
@@ -409,10 +417,12 @@
     $('refreshBtn').addEventListener('click', () => { state.declined = false; show(state.date, state.date === todayET()); });
     $('settingsBtn').addEventListener('click', () => {
       $('demoToggle').checked = state.demo;
-      $('lookSelect').value = document.documentElement.dataset.look || 'clean';
+      $('lookSelect').value = document.documentElement.dataset.look || 'glass';
+      $('glowSelect').value = document.documentElement.dataset.glow || 'blue';
       $('versionLabel').textContent = APP_VERSION;
       $('settingsDialog').showModal();
     });
+    $('glowSelect').addEventListener('change', (e) => { store.set('glow', applyGlow(e.target.value)); });
     $('lookSelect').addEventListener('change', (e) => { store.set('look', applyLook(e.target.value)); });
     $('demoToggle').addEventListener('change', (e) => {
       state.demo = e.target.checked;

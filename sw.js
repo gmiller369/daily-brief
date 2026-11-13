@@ -1,5 +1,5 @@
 /* Service worker: app shell works offline; brief data is network-first with an offline fallback. */
-const SHELL_CACHE = 'brief-shell-v3';
+const SHELL_CACHE = 'brief-shell-v4';
 const DATA_CACHE = 'brief-data-v1';
 const SHELL = [
   './', 'index.html', 'styles.css', 'app.js', 'crypto.js', 'manifest.webmanifest',
