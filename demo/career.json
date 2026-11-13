@@ -1,0 +1,45 @@
+{
+  "groups": [
+    {
+      "title": "Career move for today",
+      "items": [
+        {
+          "title": "Send a 3-line follow-up to a recruiter you interviewed with",
+          "detail": "Thank them, restate interest, ask about next steps.",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "title": "Action needed",
+      "items": [
+        {
+          "title": "Example Co: reply with interview availability",
+          "due": "2026-11-14",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "title": "Inbox updates",
+      "items": [
+        {
+          "title": "Example Corp: moved to final round",
+          "from": "recruiting@example.com",
+          "checkable": false
+        }
+      ]
+    },
+    {
+      "title": "New postings",
+      "items": [
+        {
+          "title": "Example Inc: Summer 2027 Solutions Engineering Intern",
+          "detail": "Remote \u00b7 $35/hr \u00b7 apply by Dec 1. Fits: customer-facing technical role.",
+          "url": "https://example.com/jobs/123",
+          "tag": "New"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "summary": "Presentations are next week. One assignment due this week.",
+  "groups": [
+    {
+      "title": "Due in the next 7 days",
+      "items": [
+        {
+          "title": "Sample assignment: case write-up",
+          "due": "2026-11-16",
+          "tag": "Canvas"
+        },
+        {
+          "title": "Sample quiz",
+          "due": "2026-11-18",
+          "tag": "Canvas"
+        }
+      ]
+    },
+    {
+      "title": "Today's class",
+      "items": [
+        {
+          "title": "Bring laptop and case notes",
+          "checkable": true
+        }
+      ]
+    }
+  ]
+}

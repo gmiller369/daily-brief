@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "title": "Sample headline: world",
+      "url": "https://example.com/1",
+      "tag": "World"
+    },
+    {
+      "title": "Sample headline: business",
+      "url": "https://example.com/2",
+      "tag": "Business"
+    },
+    {
+      "title": "Sample headline: tech & AI",
+      "url": "https://example.com/3",
+      "tag": "Tech"
+    },
+    {
+      "title": "Sample headline: sports",
+      "url": "https://example.com/4",
+      "tag": "Sports"
+    }
+  ]
+}

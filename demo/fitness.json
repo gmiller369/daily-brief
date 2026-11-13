@@ -1,0 +1,33 @@
+{
+  "summary": "Pull day",
+  "items": [
+    {
+      "title": "Barbell row",
+      "detail": "4 \u00d7 6\u20138"
+    },
+    {
+      "title": "Lat pulldown",
+      "detail": "3 \u00d7 10"
+    },
+    {
+      "title": "Seated cable row",
+      "detail": "3 \u00d7 10\u201312"
+    },
+    {
+      "title": "Face pulls",
+      "detail": "3 \u00d7 15"
+    },
+    {
+      "title": "Barbell curl",
+      "detail": "3 \u00d7 10"
+    },
+    {
+      "title": "Cardio: 15 min incline walk",
+      "tag": "Cardio"
+    },
+    {
+      "title": "Goal: hit protein target",
+      "tag": "Goal"
+    }
+  ]
+}

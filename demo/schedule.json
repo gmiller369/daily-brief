@@ -1,0 +1,42 @@
+{
+  "items": [
+    {
+      "time": "7:30 AM",
+      "title": "Coffee, then gym (Pull)",
+      "kind": "suggested"
+    },
+    {
+      "time": "9:00 AM",
+      "end": "11:45 AM",
+      "title": "Class: Blocks A + B",
+      "kind": "fixed"
+    },
+    {
+      "time": "12:00 PM",
+      "title": "Lunch",
+      "kind": "suggested"
+    },
+    {
+      "time": "1:00 PM",
+      "end": "2:30 PM",
+      "title": "Focus: presentation slides",
+      "kind": "suggested"
+    },
+    {
+      "time": "2:30 PM",
+      "end": "7:00 PM",
+      "title": "Open time",
+      "kind": "open"
+    },
+    {
+      "time": "7:00 PM",
+      "title": "Chapter",
+      "kind": "fixed"
+    },
+    {
+      "time": "12:00 AM",
+      "title": "Bedtime target",
+      "kind": "fixed"
+    }
+  ]
+}

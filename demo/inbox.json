@@ -1,0 +1,13 @@
+{
+  "items": [
+    {
+      "title": "Classmate: asked for your slides by tonight",
+      "from": "Alex (example)",
+      "priority": "high"
+    },
+    {
+      "title": "Advisor: wants to set up a meeting",
+      "from": "Dr. Example"
+    }
+  ]
+}

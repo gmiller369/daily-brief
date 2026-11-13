@@ -1,0 +1,21 @@
+{
+  "edition": "Sample",
+  "headline": "Marketing class this morning, pull day, presentations one week out.",
+  "quote": {
+    "text": "The best way out is always through.",
+    "author": "Robert Frost"
+  },
+  "top3": [
+    {
+      "title": "Finish marketing case prep",
+      "priority": "high"
+    },
+    {
+      "title": "Reply to recruiter with interview availability",
+      "priority": "high"
+    },
+    {
+      "title": "Pull day before class"
+    }
+  ]
+}

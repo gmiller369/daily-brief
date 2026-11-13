@@ -1,0 +1,34 @@
+{
+  "stats": [
+    {
+      "label": "S&P 500",
+      "value": "6,000.00",
+      "change": "+0.50%"
+    },
+    {
+      "label": "Dow",
+      "value": "44,000.00",
+      "change": "-0.20%"
+    },
+    {
+      "label": "Nasdaq",
+      "value": "20,000.00",
+      "change": "+0.80%"
+    }
+  ],
+  "summary": "Sample numbers only. Your money agent fills in the real prior-day close.",
+  "progress": [
+    {
+      "label": "Roth IRA (2026)",
+      "current": 2500,
+      "target": 7500,
+      "unit": "$"
+    },
+    {
+      "label": "HYSA",
+      "current": 1200,
+      "target": 2000,
+      "unit": "$"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Daily Brief</title>
+  <meta name="description" content="Grady's personal morning brief.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Daily Brief">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn" id="prevDay" aria-label="Previous day">&#8249;</button>
+    <div class="topbar-title">
+      <div class="paper">The Daily Brief</div>
+      <div class="date" id="dateLabel">Loading&hellip;</div>
+    </div>
+    <button class="icon-btn" id="nextDay" aria-label="Next day">&#8250;</button>
+  </header>
+
+  <nav class="chips" id="chips" aria-label="Sections"></nav>
+
+  <main id="main" aria-live="polite">
+    <div class="empty">Loading today&rsquo;s brief&hellip;</div>
+  </main>
+
+  <footer class="foot">
+    <button class="link-btn" id="refreshBtn">Refresh</button>
+    <span id="status"></span>
+    <button class="link-btn" id="settingsBtn">Settings</button>
+  </footer>
+
+  <dialog id="unlockDialog">
+    <form method="dialog" id="unlockForm">
+      <h2>Unlock your brief</h2>
+      <p>Your daily updates are encrypted. Enter your passphrase once and this phone will remember it.</p>
+      <input type="password" id="passInput" autocomplete="current-password" placeholder="Passphrase" required>
+      <p class="err" id="unlockErr"></p>
+      <div class="row">
+        <button value="cancel" formnovalidate class="ghost">Not now</button>
+        <button value="ok" class="primary" id="unlockOk">Unlock</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="settingsDialog">
+    <form method="dialog">
+      <h2>Settings</h2>
+      <label class="check"><input type="checkbox" id="demoToggle"> Show demo data</label>
+      <p class="small">Installed version: <span id="versionLabel"></span></p>
+      <div class="row">
+        <button value="forget" class="ghost" id="forgetBtn">Forget passphrase</button>
+        <button value="close" class="primary">Done</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="crypto.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
