@@ -173,7 +173,7 @@ dialog input[type=password] {
     linear-gradient(160deg, var(--g4), var(--g5));
   background-attachment: fixed;
 }
-:root[data-look="glass"] .topbar { background: color-mix(in srgb, var(--g5) 45%, rgba(255,255,255,.08)); backdrop-filter: blur(30px) saturate(150%); -webkit-backdrop-filter: blur(30px) saturate(150%); box-shadow: none; border-bottom: 1px solid rgba(255,255,255,.2); }
+:root[data-look="glass"] .topbar { background: color-mix(in srgb, var(--g5) 72%, transparent); backdrop-filter: blur(30px) saturate(150%); -webkit-backdrop-filter: blur(30px) saturate(150%); box-shadow: none; border-bottom: 1px solid rgba(255,255,255,.2); }
 :root[data-look="glass"] .card, :root[data-look="glass"] .chip, :root[data-look="glass"] .stat {
   backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%);
   border: 1px solid rgba(255,255,255,.28); box-shadow: 0 8px 24px rgba(5,20,70,.18);
