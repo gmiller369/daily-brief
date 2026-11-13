@@ -1,10 +1,11 @@
 /* Service worker: app shell works offline; brief data is network-first with an offline fallback. */
-const SHELL_CACHE = 'brief-shell-v2';
+const SHELL_CACHE = 'brief-shell-v3';
 const DATA_CACHE = 'brief-data-v1';
 const SHELL = [
   './', 'index.html', 'styles.css', 'app.js', 'crypto.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png',
-  'fonts/fredoka-latin-wght-normal.woff2', 'fonts/nunito-latin-wght-normal.woff2',
+  'fonts/poppins-latin-400-normal.woff2', 'fonts/poppins-latin-500-normal.woff2',
+  'fonts/poppins-latin-600-normal.woff2', 'fonts/poppins-latin-700-normal.woff2',
 ];
 
 self.addEventListener('install', (e) => {

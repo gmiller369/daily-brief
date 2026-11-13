@@ -28,6 +28,16 @@
     del(k) { try { localStorage.removeItem(k); } catch (e) { /* ignore */ } },
   };
 
+  const LOOK_COLORS = { clean: '#1f5fe0', glass: '#1f5fe0', midnight: '#0a1430', sky: '#cfe0ff' };
+  function applyLook(look) {
+    if (!LOOK_COLORS[look]) look = 'clean';
+    document.documentElement.dataset.look = look;
+    const m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.setAttribute('content', LOOK_COLORS[look]);
+    return look;
+  }
+  applyLook(new URLSearchParams(location.search).get('look') || store.get('look') || 'clean');
+
   const state = {
     date: todayET(),
     demo: store.get('demo') === '1',
@@ -399,9 +409,11 @@
     $('refreshBtn').addEventListener('click', () => { state.declined = false; show(state.date, state.date === todayET()); });
     $('settingsBtn').addEventListener('click', () => {
       $('demoToggle').checked = state.demo;
+      $('lookSelect').value = document.documentElement.dataset.look || 'clean';
       $('versionLabel').textContent = APP_VERSION;
       $('settingsDialog').showModal();
     });
+    $('lookSelect').addEventListener('change', (e) => { store.set('look', applyLook(e.target.value)); });
     $('demoToggle').addEventListener('change', (e) => {
       state.demo = e.target.checked;
       store.set('demo', state.demo ? '1' : '0');

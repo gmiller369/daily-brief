@@ -54,6 +54,14 @@
   <dialog id="settingsDialog">
     <form method="dialog">
       <h2>Settings</h2>
+      <label class="check">Look
+        <select id="lookSelect">
+          <option value="clean">Clean (white &amp; blue)</option>
+          <option value="glass">Glass (see-through)</option>
+          <option value="midnight">Midnight (navy)</option>
+          <option value="sky">Sky (soft fade)</option>
+        </select>
+      </label>
       <label class="check"><input type="checkbox" id="demoToggle"> Show demo data</label>
       <p class="small">Installed version: <span id="versionLabel"></span></p>
       <div class="row">
