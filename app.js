@@ -28,7 +28,7 @@
     del(k) { try { localStorage.removeItem(k); } catch (e) { /* ignore */ } },
   };
 
-  const LOOK_COLORS = { clean: '#1f5fe0', glass: '#1f5fe0', midnight: '#0a1430', sky: '#cfe0ff' };
+  const LOOK_COLORS = { clean: '#1f5fe0', glass: '#1f5fe0', midnight: '#0a1430', sky: '#cfe0ff', newspaper: '#f4f0e6' };
   function applyLook(look) {
     if (!LOOK_COLORS[look]) look = 'clean';
     document.documentElement.dataset.look = look;
